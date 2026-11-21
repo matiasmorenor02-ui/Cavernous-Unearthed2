@@ -23,12 +23,22 @@ jobs:
           ./gradlew build --no-daemon --console=plain 2>&1 | tee errores.txt
           exit ${PIPESTATUS[0]}
 
+      - name: Buscar clases de 26.3
+        if: always()
+        run: |
+          NAMES='DensityFunction|SurfaceRules|FeaturePlaceContext|FeatureConfiguration|NoneFeatureConfiguration|TreeConfiguration|SimpleBlockConfiguration|VegetationPatchConfiguration|RandomPatchConfiguration|MultifaceGrowthConfiguration|BlockAndTintGetter|SignRenderer|PanoramicScreenshotParameters|ConstantValue|VariantMutator|Compostable|FurnaceFuel|RegisterColorHandlersEvent|ConfiguredFeature|Feature'
+          find ~/.gradle "$GITHUB_WORKSPACE" -name '*.jar' -size +3M 2>/dev/null | while read j; do
+            unzip -l "$j" 2>/dev/null | awk '{print $4}' | grep -E "/($NAMES)\.class$" | sed "s|^|$(basename "$j"): |"
+          done | sort -u | tee clases.txt
+
       - name: Subir log
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: errores
-          path: errores.txt
+          path: |
+            errores.txt
+            clases.txt
 
       - name: Subir jar
         if: success()
