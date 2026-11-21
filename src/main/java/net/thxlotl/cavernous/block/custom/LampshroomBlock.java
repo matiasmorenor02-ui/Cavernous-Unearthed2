@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -60,11 +59,6 @@ public class LampshroomBlock extends GrowingPlantHeadBlock {
     @Override
     public boolean isCollisionShapeFullBlock(BlockState state, BlockGetter world, BlockPos pos) {
         return false;
-    }
-
-    @Override
-    protected MapCodec<? extends GrowingPlantHeadBlock> codec() {
-        return null;
     }
 
     @Override

@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;
@@ -37,11 +36,6 @@ public class HangingShroomCapBlock extends GrowingPlantHeadBlock {
     @Override
     protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return CAP_COLLISION_SHAPE;
-    }
-
-    @Override
-    protected MapCodec<? extends GrowingPlantHeadBlock> codec() {
-        return null;
     }
 
     @Override

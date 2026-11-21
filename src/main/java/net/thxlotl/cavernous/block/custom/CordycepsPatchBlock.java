@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffect;
@@ -31,11 +30,6 @@ public class CordycepsPatchBlock extends VegetationBlock {
 
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
-    }
-
-    @Override
-    protected MapCodec<? extends VegetationBlock> codec() {
-        return null;
     }
 
     @Override

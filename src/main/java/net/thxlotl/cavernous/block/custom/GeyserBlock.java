@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Vec3i;
 import net.minecraft.server.level.ServerLevel;
@@ -44,11 +43,6 @@ public class GeyserBlock extends BaseEntityBlock {
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(TRIGGERED);
-    }
-
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return null;
     }
 
     @Override

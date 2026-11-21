@@ -2,12 +2,12 @@ package net.thxlotl.cavernous.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.thxlotl.cavernous.block.ModBlocks;
 import org.jetbrains.annotations.Nullable;
@@ -33,7 +33,9 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
     @Override
     public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ItemAbility itemAbility, boolean simulate) {
 
-        if(context.getItemInHand().getItem() instanceof AxeItem) {
+        // AxeItem was removed in 26.3 (stripping is now data-driven via block transformers),
+        // so we check the ability instead of the item class.
+        if(itemAbility == ItemAbilities.AXE_STRIP) {
 
             // CREATE A MAP FOR THIS LATER
             if(state.is(ModBlocks.SHROOMWOOD_LOG)){

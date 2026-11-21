@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
@@ -56,8 +55,4 @@ public class LampshroomStemBlock extends GrowingPlantBodyBlock {
         return false;
     }
 
-    @Override
-    protected MapCodec<? extends GrowingPlantBodyBlock> codec() {
-        return null;
-    }
 }

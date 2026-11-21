@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.tags.BlockTags;
@@ -30,11 +29,6 @@ public class PuffshroomBlock extends VegetationBlock {
     private static final float CLOUD_RADIUS = 10.0f;
     private static final int CLOUD_PARTICLE_COUNT = 7;
     private static final int SPEW_PARTICLE_COUNT = 4;
-
-    @Override
-    protected MapCodec<? extends VegetationBlock> codec() {
-        return null;
-    }
 
     private static final VoxelShape SHAPE = Shapes.or(
             Block.column((double)12.0F, (double)3.0F, (double)14.0F),

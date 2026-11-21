@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -20,11 +19,6 @@ public class MyceliumVineBlock extends GrowingPlantHeadBlock {
     }
 
     private static final VoxelShape SHAPE = Block.column((double)12.0F, (double)4.0F, (double)16.0F);
-
-    @Override
-    protected MapCodec<? extends GrowingPlantHeadBlock> codec() {
-        return null;
-    }
 
     @Override
     protected Block getBodyBlock() {

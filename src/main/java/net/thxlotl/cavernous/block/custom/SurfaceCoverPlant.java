@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceKey;
@@ -22,11 +21,6 @@ public class SurfaceCoverPlant extends VegetationBlock {
     }
 
     private static final VoxelShape SHAPE = Block.column((double)12.0F, (double)0.0F, (double)4.0F);
-
-    @Override
-    protected MapCodec<? extends VegetationBlock> codec() {
-        return null;
-    }
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {

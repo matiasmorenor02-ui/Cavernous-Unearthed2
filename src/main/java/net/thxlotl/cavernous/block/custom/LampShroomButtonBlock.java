@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -48,11 +47,6 @@ public class LampShroomButtonBlock extends VegetationBlock implements Bonemealab
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return BASE_SHAPE;
-    }
-
-    @Override
-    protected MapCodec<? extends VegetationBlock> codec() {
-        return null;
     }
 
     // Bonemeal

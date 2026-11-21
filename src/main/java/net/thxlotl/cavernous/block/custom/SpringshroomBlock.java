@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -53,12 +52,6 @@ public class SpringshroomBlock extends VegetationBlock {
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return SHAPE;
     }
-
-    @Override
-    protected MapCodec<? extends VegetationBlock> codec() {
-        return null;
-    }
-
 
     // Properties
     @Override

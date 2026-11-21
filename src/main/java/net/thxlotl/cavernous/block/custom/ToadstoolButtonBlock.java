@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -74,11 +73,6 @@ public class ToadstoolButtonBlock extends VegetationBlock implements Bonemealabl
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         ///return SHAPES.get(state.getValue(FACING));
         return SHAPE_NO_ROTATE;
-    }
-
-    @Override
-    protected MapCodec<? extends VegetationBlock> codec() {
-        return null;
     }
 
     // Bonemeal

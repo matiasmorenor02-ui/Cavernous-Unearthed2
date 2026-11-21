@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -30,11 +29,6 @@ public class LampshroomPatchBlock extends VegetationBlock implements Bonemealabl
 
     protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
         return state.is(ModTags.Blocks.SHROOMWOOD_LOGS) || super.mayPlaceOn(state, level, pos) || state.is(BlockTags.MUSHROOM_GROW_BLOCK);
-    }
-
-    @Override
-    protected MapCodec<? extends VegetationBlock> codec() {
-        return null;
     }
 
     @Override

@@ -1,6 +1,5 @@
 package net.thxlotl.cavernous.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundSource;
@@ -25,11 +24,6 @@ public class HangingShroomStemBlock extends GrowingPlantBodyBlock {
 
     public HangingShroomStemBlock(Properties properties) {
         super(properties, Direction.DOWN, SHAPE, false);
-    }
-
-    @Override
-    protected MapCodec<? extends GrowingPlantBodyBlock> codec() {
-        return null;
     }
 
     @Override
